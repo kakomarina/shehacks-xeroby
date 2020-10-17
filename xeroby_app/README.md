@@ -1,6 +1,6 @@
 # xeroby_app
 
-Crie seu novo jardim.
+Crie seu próprio jardim.
 
 ## Getting Started
 
