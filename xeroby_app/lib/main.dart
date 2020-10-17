@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-
+import 'meu_jardim.dart';
 void main() {
   runApp(MyApp());
 }
@@ -58,14 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
       child:  Text("xe r-oby",
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Colors.green[900], fontWeight: FontWeight.bold)
+                color: Color(0xff16613D), fontWeight: FontWeight.bold)
       ),
     );
     final DescriptionXeroby = Material(
       child:  Text("(tupi) eu sou verde",
           textAlign: TextAlign.left,
           style: TextStyle(
-              color: Colors.green[900], fontStyle: FontStyle.italic)
+              color: Color(0xff16613D), fontStyle: FontStyle.italic)
       ),
 
     );
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.lightGreen[700],
+      color: Color(0xFF8DAF5C),
       child: MaterialButton(
 
         minWidth: MediaQuery.of(context).size.width,
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => loginPage()),
+          MaterialPageRoute(builder: (context) => meujardim()),
         );},
         child: Text("Login",
             textAlign: TextAlign.center,
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final createButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.lightGreen[700],
+      color: Color(0xFF8DAF5C),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
