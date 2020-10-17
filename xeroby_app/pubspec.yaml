@@ -49,10 +49,7 @@ flutter:
   assets:
     - Images/icon-1.png
     #   - images/a_dot_ham.jpeg
-  fonts:
-    - family: Montserrat
-      fonts:
-        - asset: asset/fonts/Montserrat-Regular.ttf
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

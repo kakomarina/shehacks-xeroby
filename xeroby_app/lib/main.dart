@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-
+import 'meu_jardim.dart';
 void main() {
   runApp(MyApp());
 }
@@ -57,21 +57,20 @@ class _MyHomePageState extends State<MyHomePage> {
     final NameXeroby = Material(
       child:  Text("xe r-oby",
             textAlign: TextAlign.left,
-            style: style.copyWith(
-                color: Colors.green[900], fontWeight: FontWeight.bold)
+            style: TextStyle(
+                color: Color(0xff16613D), fontWeight: FontWeight.bold)
       ),
     );
     final DescriptionXeroby = Material(
       child:  Text("(tupi) eu sou verde",
           textAlign: TextAlign.left,
-          style: style.copyWith(
-              color: Colors.green[900], fontStyle: FontStyle.italic)
+          style: TextStyle(
+              color: Color(0xff16613D), fontStyle: FontStyle.italic)
       ),
 
     );
     final emailField = TextField(
       obscureText: false,
-      style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Email",
@@ -80,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     final passwordField = TextField(
       obscureText: true,
-      style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Password",
@@ -88,35 +86,38 @@ class _MyHomePageState extends State<MyHomePage> {
           OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
     final loginButon = Material(
+
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.lightGreen[700],
+      color: Color(0xFF8DAF5C),
       child: MaterialButton(
+
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => loginPage()),
+          MaterialPageRoute(builder: (context) => meujardim()),
         );},
         child: Text("Login",
             textAlign: TextAlign.center,
-            style: style.copyWith(
+            style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
     final createButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.lightGreen[700],
+      color: Color(0xFF8DAF5C),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {},
         child: Text("Create Account",
             textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold)
+        ),
       ),
     );
     return Scaffold(
