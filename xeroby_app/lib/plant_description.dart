@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/meu_jardim.dart';
 import 'main.dart';
 
 class PlantDescription extends StatefulWidget{
@@ -56,17 +57,14 @@ class _DescriptionState extends State<PlantDescription> {
           image: AssetImage("Images/hortela.jpg"),
             fit: BoxFit.cover
         ),
+        shape: BoxShape.circle
       ),
     );
 
-    final fotoCircular = ClipRRect(
-      borderRadius: BorderRadius.circular(8.0),
-      child: imagem,
-    );
 
     final fotoPainel = Column(
       children: <Widget>[
-        fotoCircular,
+        imagem,
         caracteristicas
       ]
     );
@@ -79,6 +77,19 @@ class _DescriptionState extends State<PlantDescription> {
       ],
     );
 
+
+    int _selectedIndex = 0;
+    final _pages = <Widget>[
+      MyHomePage(),//this is a stateful widget on a separate file
+      meujardim(),//this is a stateful widget on a separate file
+      PlantDescription(),//this is a stateful widget on a separate file
+    ];
+
+    void _onItemTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -161,6 +172,8 @@ class _DescriptionState extends State<PlantDescription> {
             ),
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
 
       ),
     );
