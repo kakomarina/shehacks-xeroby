@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AdicionarPlanta()),
+          MaterialPageRoute(builder: (context) => meujardim()),
         );},
         child: Text("Login",
             textAlign: TextAlign.center,

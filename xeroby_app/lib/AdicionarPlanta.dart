@@ -44,6 +44,7 @@ class _AdicionarState extends State<AdicionarPlanta> {
               child: Center(child: Text('Entry ${iluminacao[index]}', textAlign: TextAlign.center,
                                         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
               );
+
           },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
