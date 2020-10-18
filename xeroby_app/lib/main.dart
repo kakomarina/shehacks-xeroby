@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'meu_jardim.dart';
+import 'AdicionarPlanta.dart';
 void main() {
   runApp(MyApp());
 }
@@ -97,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => meujardim()),
+          MaterialPageRoute(builder: (context) => AdicionarPlanta()),
         );},
         child: Text("Login",
             textAlign: TextAlign.center,

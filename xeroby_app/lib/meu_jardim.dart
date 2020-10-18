@@ -26,9 +26,56 @@ class meujardim extends StatelessWidget {
             IconButton(icon: Icon(Icons.person_outline, color: Color(0xff16613D)), onPressed: () {}),
           ],
     ),
-      body: const Center(
+      body:  Container(
+          alignment: Alignment.topRight,
+          margin: EdgeInsets.symmetric(vertical: 20.0),
+          height: 200.0,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              Container(
+                width: 10.0,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.red,
+              ),
+              Container(
+                width: 10.0,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 10.0,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.green,
+              ),
+              Container(
+                width: 10.0,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.yellow,
+              ),
+              Container(
+                width: 10.0,
+              ),
+              Container(
+                width: 160.0,
+                color: Colors.orange,
+              ),
+              Container(
+                width: 10.0,
+              ),
+            ],
+          ),
 
-      ),
+
+    ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[

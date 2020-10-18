@@ -7,9 +7,11 @@ class AdicionarPlanta extends StatefulWidget {
 }
 
 class _AdicionarState extends State<AdicionarPlanta> {
+  final List<String> entries = <String>['A', 'B', 'C'];
+  final List<int> colorCodes = <int>[600, 500, 100];
   @override
   Widget build(BuildContext context) {
-    GridView.count(
+    return GridView.count(
       primary: false,
       padding: const EdgeInsets.all(20),
       crossAxisSpacing: 10,
@@ -23,8 +25,7 @@ class _AdicionarState extends State<AdicionarPlanta> {
           color: Colors.teal[100],
         ),
         Container(
-          final List<String> entries = <String>['A', 'B', 'C'];
-          final List<int> colorCodes = <int>[600, 500, 100];
+
           padding: const EdgeInsets.all(8),
           child: ListView.separated(
           padding: const EdgeInsets.all(8),
@@ -37,7 +38,7 @@ class _AdicionarState extends State<AdicionarPlanta> {
             );
           },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
-        );
+        ),
         ),
         Container(
           padding: const EdgeInsets.all(8),
