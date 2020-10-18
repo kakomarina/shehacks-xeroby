@@ -24,9 +24,9 @@ class _DescriptionState extends State<PlantDescription> {
   Widget build(BuildContext context) {
 
     final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)));
-    final nomeCientifico = Text(" Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
-    final categoriaPlanta = Text(" Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
-    final descricao = Text(" As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
+    final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
+    final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
+    final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
 
     final plantColumn = Wrap(
       runSpacing: 10,
@@ -40,14 +40,17 @@ class _DescriptionState extends State<PlantDescription> {
     );
 
     final plantBox =
-        Container(height: 244, width: 150, child: plantColumn, color: hortela);
+        Container(height: 244, width: 150, child: plantColumn,
+            padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela));
 
     final curiosidades = Text("Vai bem com pratos que levam tomate, azeite, limão, carnes vermelhas, massas e queijos",
         textAlign: TextAlign.left, style: styleText);
     final curiosidadesBox = Container(
       width: 155,
       child: curiosidades,
-      color: hortela
+      padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela)
     );
 
     final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
