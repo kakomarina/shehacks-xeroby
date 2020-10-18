@@ -24,50 +24,104 @@ class _AdicionarState extends State<AdicionarPlanta> {
       children: <Widget>[
         Container(
           padding: const EdgeInsets.all(8),
-          height: 50,
-          child: const Text('Heed not the rabble'),
-          color: Colors.teal[100],
-        ),
-        Container(
-          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          height: 50,
-          //border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+          child: Center(
 
-          color: Colors.white,
-          child: ListView.separated(
-            padding: const EdgeInsets.all(8),
-            itemCount: iluminacao.length,
-            itemBuilder: (BuildContext context, int index) {
-            return Container(
-              height: 10,
-              color: Colors.grey,
-              child: Center(child: Text('Entry ${iluminacao[index]}', textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
-              );
+              child: Text('Girassol',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0,color: Colors.white),)
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xffb714365),
+            image: DecorationImage(
+              image: AssetImage('Images/girassol1.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: Center(
 
-          },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-        ),
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('Sound of screams but the'),
-          color: Colors.teal[300],
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('Who scream'),
-          color: Colors.teal[400],
+              child: Text('Lírio',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0,color: Colors.white),)
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xffb714365),
+            image: DecorationImage(
+              image: AssetImage('Images/lirio.jpeg'),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: const Text('Revolution is coming...'),
-          color: Colors.teal[500],
+            child: Center(
+
+            child: Text('Suculentas',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20.0,color: Colors.white),)
+            ),
+          decoration: BoxDecoration(
+          color: Color(0xffb714365),
+          image: DecorationImage(
+          image: AssetImage('Images/suculentas.jpeg'),
+          fit: BoxFit.cover,
+          ),
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
-          color: Colors.teal[600],
+          child: Center(
+
+              child: Text('Bonsai',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0,color: Colors.white),)
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xffb714365),
+            image: DecorationImage(
+              image: AssetImage('Images/bonsai.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: Center(
+
+              child: Text('Hibiscus',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0,color: Colors.white),)
+          ),
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            color: Color(0xffb714365),
+            border: Border.all(
+              color: Color(0xffb714365),
+              width: 0.12,
+            ),
+            image: DecorationImage(
+              image: AssetImage('Images/hibicius.png'),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: Center(
+
+              child: Text('Hortela',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0,color: Colors.white),)
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xffb714365),
+            image: DecorationImage(
+              image: AssetImage('Images/hortela.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
       ],
     );
