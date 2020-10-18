@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'main.dart';
 
@@ -46,12 +48,14 @@ class _DescriptionState extends State<PlantDescription> {
 
     final caracteristicas = Text("caracteristica\ncaracteristica\ncaracteristica",
         textAlign: TextAlign.left, style: styleText);
-    
-    final foto = Image.asset("Images/hortela", fit: BoxFit.fill);
+
+
+    File arquivoDeImagem = File("Images/hortela.jpg");
+    final imagem = Image.file(arquivoDeImagem);
 
     final fotoCircular = ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
-      child: foto,
+      child: imagem,
     );
 
     final fotoPainel = Column(
@@ -64,6 +68,7 @@ class _DescriptionState extends State<PlantDescription> {
     final primeiraLinha = Row(
       children: <Widget>[
         plantBox,
+        SizedBox(width: 10,),
         fotoPainel
       ],
     );
