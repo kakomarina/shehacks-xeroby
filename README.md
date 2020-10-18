@@ -17,3 +17,4 @@ Fernanda Marana \
 Marina Kako
 
 Solução desenvolvida para o SheHacks 2020
+Demonstração do app: https://youtu.be/fRhDH8htvyk 
