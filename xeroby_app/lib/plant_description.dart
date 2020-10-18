@@ -23,12 +23,13 @@ class _DescriptionState extends State<PlantDescription> {
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: styleBold);
-    final nomeCientifico = Text("Ocimum basilicum", textAlign: TextAlign.left, style: styleItalico);
-    final categoriaPlanta = Text("Ervas medicinais, condimento", textAlign: TextAlign.left, style: styleText);
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)););
+    final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
+    final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
     final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
 
-    final plantColumn = Column(
+    final plantColumn = Wrap(
+      runSpacing: 10,
       children: <Widget>[
         nomeCientifico,
         categoriaPlanta,
@@ -83,6 +84,9 @@ class _DescriptionState extends State<PlantDescription> {
         ),
         shape: BoxShape.circle
       ),
+      child: Center(
+        child: Text(""),
+      )
     );
 
 
