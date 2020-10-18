@@ -23,14 +23,15 @@ class _DescriptionState extends State<PlantDescription> {
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)););
-    final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
-    final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
-    final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)));
+    final nomeCientifico = Text(" Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
+    final categoriaPlanta = Text(" Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
+    final descricao = Text(" As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
 
     final plantColumn = Wrap(
       runSpacing: 10,
       children: <Widget>[
+        SizedBox(height: 10,),
         nomeCientifico,
         categoriaPlanta,
         Text("descrição", textAlign: TextAlign.center, style: styleBold),
