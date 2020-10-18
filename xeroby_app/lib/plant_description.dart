@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/meu_jardim.dart';
 import 'main.dart';
 
 class PlantDescription extends StatefulWidget{
@@ -12,20 +15,21 @@ class PlantDescription extends StatefulWidget{
 
 class _DescriptionState extends State<PlantDescription> {
 
-  TextStyle styleItalico= TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontStyle: FontStyle.italic);
-  TextStyle styleBold = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold);
-  TextStyle styleText = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  TextStyle styleItalico= TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, fontStyle: FontStyle.italic, color: Color(0xff16613D));
+  TextStyle styleBold = TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, fontWeight: FontWeight.bold, color: Color(0xff16613D));
+  TextStyle styleText = TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, color: Color(0xff16613D));
   Color hortela = const Color(0xffAEBCB2);
 
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Nome", textAlign: TextAlign.left, style: styleBold);
-    final nomeCientifico = Text("Nome Cientifico", textAlign: TextAlign.left, style: styleItalico);
-    final categoriaPlanta = Text("Categoria", textAlign: TextAlign.left, style: styleText);
-    final descricao = Text("Descricao textao", textAlign: TextAlign.left, style: styleText);
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)););
+    final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
+    final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
+    final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
 
-    final plantColumn = Column(
+    final plantColumn = Wrap(
+      runSpacing: 10,
       children: <Widget>[
         nomeCientifico,
         categoriaPlanta,
@@ -37,26 +41,58 @@ class _DescriptionState extends State<PlantDescription> {
     final plantBox =
         Container(height: 244, width: 150, child: plantColumn, color: hortela);
 
-    final curiosidades = Text("curiosidades", textAlign: TextAlign.left, style: styleText);
+    final curiosidades = Text("Vai bem com pratos que levam tomate, azeite, limão, carnes vermelhas, massas e queijos",
+        textAlign: TextAlign.left, style: styleText);
     final curiosidadesBox = Container(
       width: 155,
       child: curiosidades,
       color: hortela
     );
 
-    final caracteristicas = Text("caracteristica\ncaracteristica\ncaracteristica",
-        textAlign: TextAlign.left, style: styleText);
-    
-    final foto = Image.asset("Images/hortela", fit: BoxFit.fill);
+    final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
+    final calendarIcon = Icon(Icons.calendar_today_outlined, color: Color(0xff16613D), size: 15);
 
-    final fotoCircular = ClipRRect(
-      borderRadius: BorderRadius.circular(8.0),
-      child: foto,
+    final local = Text(" área de serviço", textAlign: TextAlign.left, style: styleText);
+    final placeIcon = Icon(Icons.place, color: Color(0xff16613D), size: 15);
+
+    final caracteristica1 = Row(
+      children: <Widget>[
+        calendarIcon,
+        tempo
+      ],
     );
+
+    final caracteristica2 = Row(
+      children: <Widget>[
+        placeIcon,
+        local
+      ],
+    );
+
+    final caracteristicas = Column(
+      children: <Widget>[
+        caracteristica1,
+        caracteristica2
+      ],
+    );
+
+    final imagem = Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("Images/hortela.jpg"),
+            fit: BoxFit.fill
+        ),
+        shape: BoxShape.circle
+      ),
+      child: Center(
+        child: Text(""),
+      )
+    );
+
 
     final fotoPainel = Column(
       children: <Widget>[
-        fotoCircular,
+        imagem,
         caracteristicas
       ]
     );
@@ -64,6 +100,7 @@ class _DescriptionState extends State<PlantDescription> {
     final primeiraLinha = Row(
       children: <Widget>[
         plantBox,
+        SizedBox(width: 20,),
         fotoPainel
       ],
     );
@@ -78,7 +115,9 @@ class _DescriptionState extends State<PlantDescription> {
             child: Column(
               children: <Widget>[
                 nomePlanta,
+                SizedBox(height: 20),
                 primeiraLinha,
+                SizedBox(height: 40),
                 Text("Saiba mais", textAlign: TextAlign.left, style: styleBold),
                 curiosidadesBox
               ]
