@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/InsidedContent.dart';
 import 'login_page.dart';
 import 'meu_jardim.dart';
 import 'AdicionarPlanta.dart';
@@ -99,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PlantDescription()),
+          MaterialPageRoute(builder: (context) => InsideContent()),
         );},
         child: Text("Login",
             textAlign: TextAlign.center,
