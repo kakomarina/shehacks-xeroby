@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
-class animationLogo extends StatefulWidget {
-  animationLogo({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+import 'dart:async';
+import 'main.dart';
+import 'package:xeroby_app/InsidedContent.dart';
+class animationLogo extends StatefulWidget{
+  animationLogo({Key key,}): super(key: key);
 
   @override
-  _animationLogoState createState() => _animationLogoState();
+  _animationLogo createState()=> _animationLogo();
 }
-class _animationLogoState extends State<animationLogo> {
-  int _count = 0;
+
+class _animationLogo extends State<animationLogo> with TickerProviderStateMixin{
+  AnimationController controller;
+  Animation growAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(vsync: this, duration: Duration(seconds: 3));
+    growAnimation = Tween<double>(begin: 0, end: 200).animate(controller);
+    controller.forward();
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Expanded(flex: 1,
-          child: Container(
-            child: Image.asset('images/icon'+_count.toString()+'.png'),
-            height: 500,
-            width:500,
-            color: Colors.green,
+    return Scaffold(
+      body: Column(
+
+        mainAxisAlignment : MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          AnimatedContainer(
+            duration: Duration(milliseconds: 900),
+              alignment: Alignment(0, 4),
+            child: Image.asset(
+              'Images/icon-1.png', width: 200.0, height: 200.0,
+            ),
           ),
-        ),
 
-      ],
+
+        ],
+      ),
     );
-
   }
+
 }

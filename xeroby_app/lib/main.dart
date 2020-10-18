@@ -5,6 +5,7 @@ import 'meu_jardim.dart';
 import 'AdicionarPlanta.dart';
 import 'plant_description.dart';
 import 'create_page.dart';
+import 'animationLogo.dart';
 void main() {
   runApp(MyApp());
 }
@@ -120,7 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
         Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => createPage()),
+        //MaterialPageRoute(builder: (context) => createPage()),
+          MaterialPageRoute(builder: (context) => createPage()),
       );},
         child: Text("Criar Conta",
             textAlign: TextAlign.center,
@@ -140,6 +142,13 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(
+                  height: 155.0,
+                  child: Image.asset(
+                    "Images/icon-1.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
                 NameXeroby,
                 SizedBox(height: 15.0),
                 DescriptionXeroby,
