@@ -47,7 +47,7 @@ class _DescriptionState extends State<PlantDescription> {
     final caracteristicas = Text("caracteristica\ncaracteristica\ncaracteristica",
         textAlign: TextAlign.left, style: styleText);
     
-    final foto = Image.asset("images/foto_da_planta", fit: BoxFit.fill);
+    final foto = Image.asset("Images/hortela", fit: BoxFit.fill);
 
     final fotoCircular = ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
