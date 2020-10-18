@@ -3,6 +3,7 @@ import 'login_page.dart';
 import 'meu_jardim.dart';
 import 'AdicionarPlanta.dart';
 import 'plant_description.dart';
+import 'create_page.dart';
 void main() {
   runApp(MyApp());
 }
@@ -60,14 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
       child:  Text("xe r-oby",
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Color(0xff16613D), fontWeight: FontWeight.bold)
+                fontSize: 20.0,color: Color(0xff16613D), fontWeight: FontWeight.bold)
       ),
     );
     final DescriptionXeroby = Material(
       child:  Text("(tupi) eu sou verde",
           textAlign: TextAlign.left,
           style: TextStyle(
-              color: Color(0xff16613D), fontStyle: FontStyle.italic)
+              fontSize: 15.0,color: Color(0xff16613D), fontStyle: FontStyle.italic)
       ),
 
     );
@@ -75,17 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
       obscureText: false,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
+          hintText: "email",
           border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
     final passwordField = TextField(
       obscureText: true,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
+          hintText: "senha",
           border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
     final loginButon = Material(
 
@@ -94,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
       color: Color(0xFF8DAF5C),
       child: MaterialButton(
 
-        minWidth: MediaQuery.of(context).size.width,
+        minWidth: 200.0,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           Navigator.push(
@@ -104,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Text("Login",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+                fontSize: 20.0,color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
     final createButon = Material(
@@ -112,13 +113,18 @@ class _MyHomePageState extends State<MyHomePage> {
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xFF8DAF5C),
       child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
+        minWidth: 200.0,
+        //minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("Create Account",
+        onPressed: () {
+        Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => createPage()),
+      );},
+        child: Text("Criar Conta",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold)
+                fontSize: 20.0,color: Colors.white, fontWeight: FontWeight.bold)
         ),
       ),
     );
