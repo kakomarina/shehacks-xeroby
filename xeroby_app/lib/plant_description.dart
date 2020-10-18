@@ -50,8 +50,14 @@ class _DescriptionState extends State<PlantDescription> {
         textAlign: TextAlign.left, style: styleText);
 
 
-    File arquivoDeImagem = File("Images/hortela.jpg");
-    final imagem = Image.file(arquivoDeImagem);
+    final imagem = Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("Images/hortela.jpg"),
+            fit: BoxFit.cover
+        ),
+      ),
+    );
 
     final fotoCircular = ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
@@ -68,7 +74,7 @@ class _DescriptionState extends State<PlantDescription> {
     final primeiraLinha = Row(
       children: <Widget>[
         plantBox,
-        SizedBox(width: 10,),
+        SizedBox(width: 20,),
         fotoPainel
       ],
     );
@@ -102,7 +108,7 @@ class _DescriptionState extends State<PlantDescription> {
             child: Column(
               children: <Widget>[
                 nomePlanta,
-                SizedBox(height: 40),
+                SizedBox(height: 20),
                 primeiraLinha,
                 SizedBox(height: 40),
                 Text("Saiba mais", textAlign: TextAlign.left, style: styleBold),
