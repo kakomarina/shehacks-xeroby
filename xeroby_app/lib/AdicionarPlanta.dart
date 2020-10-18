@@ -39,8 +39,8 @@ class _AdicionarState extends State<AdicionarPlanta> {
             itemCount: iluminacao.length,
             itemBuilder: (BuildContext context, int index) {
             return Container(
-              height: 30,
-              color: Colors.green,
+              height: 10,
+              color: Colors.grey,
               child: Center(child: Text('Entry ${iluminacao[index]}', textAlign: TextAlign.center,
                                         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
               );
