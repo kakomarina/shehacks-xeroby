@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class meujardim extends StatelessWidget {
+  var controller = PageController(
+    viewportFraction: 2 / 3,
+    initialPage: 1,
+  );
   meujardim({Key key}) : super(key: key);
 
   @override
@@ -27,55 +31,121 @@ class meujardim extends StatelessWidget {
           ],
     ),
       body:  Container(
-          alignment: Alignment.topRight,
-          margin: EdgeInsets.symmetric(vertical: 20.0),
-          height: 200.0,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(
-                width: 10.0,
+        child: Wrap(
+          direction: Axis.horizontal,
+          children: [
+            Container(
+              alignment: Alignment(-0.9, 0.6),
+              child: Text('Meu Jardim',
+                style: TextStyle(
+                    fontSize: 15.0,
+                    color: Color(0xff16613D)
+                ),
               ),
-              Container(
-                width: 160.0,
-                color: Colors.red,
-              ),
-              Container(
-                width: 10.0,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 10.0,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.green,
-              ),
-              Container(
-                width: 10.0,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 10.0,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.orange,
-              ),
-              Container(
-                width: 10.0,
-              ),
-            ],
-          ),
+            ),
 
 
-    ),
+            Container(
+              //alignment: Alignment.topRight,
+              margin: EdgeInsets.symmetric(vertical: 20.0),
+              height: 200.0,
+              child: PageView(
+                controller: controller,
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.red,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.blue,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.green,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.yellow,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.orange,
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment(-0.9, 0.6),
+              child: Text('Sugestões para você',
+                style: TextStyle(
+                    fontSize: 15.0,
+                    color: Color(0xff16613D)
+                ),
+              ),
+            ),
+
+
+            Container(
+              alignment: Alignment.topRight,
+              margin: EdgeInsets.symmetric(vertical: 20.0),
+              height: 200.0,
+              child: PageView(
+                controller: controller,
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.red,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.blue,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.green,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.yellow,
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
+                    width: 160.0,
+                    color: Colors.orange,
+                  ),
+
+                ],
+              ),
+            ),
+          ],
+        ),
+
+
+      ),
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[

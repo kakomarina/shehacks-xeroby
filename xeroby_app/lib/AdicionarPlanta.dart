@@ -30,8 +30,9 @@ class _AdicionarState extends State<AdicionarPlanta> {
         ),
         Container(
           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
           height: 50,
+          //border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+
           color: Colors.white,
           child: ListView.separated(
             padding: const EdgeInsets.all(8),
@@ -39,9 +40,9 @@ class _AdicionarState extends State<AdicionarPlanta> {
             itemBuilder: (BuildContext context, int index) {
             return Container(
               height: 30,
-              color: Colors.white,
+              color: Colors.green,
               child: Center(child: Text('Entry ${iluminacao[index]}', textAlign: TextAlign.center,
-                                        style: style.copyWith(color: Colors.white, fontWeight: FontWeight.bold))),
+                                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
               );
           },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
