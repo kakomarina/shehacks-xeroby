@@ -7,8 +7,12 @@ class AdicionarPlanta extends StatefulWidget {
 }
 
 class _AdicionarState extends State<AdicionarPlanta> {
-  final List<String> entries = <String>['A', 'B', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
+  final List<String> embientes = <String>['Sala', 'Cozinha', 'Quarto', 'Jardim Externo'];
+  final List<String> iluminacao = <String>['Sol da manhã', 'Sol da tarde', 'Sol no verão', 'Sol no Inverno', 'Sem iluminação natural'];
+  final List<String> companhias = <String>['Cachorro', 'Gato', 'Bebês', 'Crianças pequenas', 'Moro sozinhe'];
+  final List<String> rotina = <String>['Viajo constantemente', 'Fora de casa o dia todo', 'Passo bastante tempo em casa'];
+  final List<String> experiencia = <String>['Sou mãe de panta', 'Nunca tive uma planta', 'Às vezes esqueço de regar', 'Não sei adubar e podar'];
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -25,17 +29,20 @@ class _AdicionarState extends State<AdicionarPlanta> {
           color: Colors.teal[100],
         ),
         Container(
-
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          height: 50,
+          color: Colors.white,
           child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: entries.length,
-          itemBuilder: (BuildContext context, int index) {
+            padding: const EdgeInsets.all(8),
+            itemCount: iluminacao.length,
+            itemBuilder: (BuildContext context, int index) {
             return Container(
-            height: 50,
-            color: Colors.amber[colorCodes[index]],
-            child: Center(child: Text('Entry ${entries[index]}')),
-            );
+              height: 30,
+              color: Colors.white,
+              child: Center(child: Text('Entry ${iluminacao[index]}', textAlign: TextAlign.center,
+                                        style: style.copyWith(color: Colors.white, fontWeight: FontWeight.bold))),
+              );
           },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
