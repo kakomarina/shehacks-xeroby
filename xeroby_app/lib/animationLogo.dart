@@ -14,7 +14,7 @@ class animationLogo extends StatefulWidget {
   final String title;
 
   @override
-  _animationLogo createState() => _animationLogoState();
+  _animationLogoState createState() => _animationLogoState();
 }
 class _animationLogoState extends State<animationLogo> {
   int _count = 0;
@@ -26,29 +26,13 @@ class _animationLogoState extends State<animationLogo> {
       children: <Widget>[
         Expanded(flex: 1,
           child: Container(
-            child: Image.asset('images/'+imgnumber.toString()+'.png'),
+            child: Image.asset('images/icon'+_count.toString()+'.png'),
             height: 500,
             width:500,
             color: Colors.green,
           ),
         ),
-        FlatButton(
-          child: Text(BtnTxt),
-          onPressed: (){
-            if (varToCheckButtonPress == 0) {
-              setState(() {
-                BtnTxt = 'PAUSE';
-                varToCheckButtonPress = 1;
-              });
-            } else if (varToCheckButtonPress == 1) {
-              setState(() {
-                BtnTxt = 'RESUME';
-                varToCheckButtonPress = 0;
-              });
-            }
-            inc();
-          },
-        )
+
       ],
     );
     );

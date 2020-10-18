@@ -86,7 +86,9 @@ class _DescriptionState extends State<PlantDescription> {
         width: 155.0,
         child: Column(
           children: <Widget>[
-            Card(child: Image.asset('Images/manjericao.png', fit: BoxFit.fill))
+        ClipRRect(
+        borderRadius: BorderRadius.circular(400.0),
+                child: Image.asset('Images/manjericao.png', fit: BoxFit.fill))
           ],
         ),
         decoration: BoxDecoration(shape: BoxShape.circle)
