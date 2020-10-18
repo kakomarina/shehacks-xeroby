@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-
+import 'meu_jardim.dart';
 class loginPage extends StatefulWidget {
   loginPage({Key key, this.title}) : super(key: key);
 
@@ -50,7 +50,11 @@ class _loginState extends State<loginPage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => meujardim()),
+          );},
         child: Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
