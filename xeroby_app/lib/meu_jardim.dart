@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/Sugestions.dart';
 import 'package:xeroby_app/plant_description.dart';
 import 'package:xeroby_app/InsidedContent.dart';
 
@@ -121,6 +122,34 @@ class meujardim extends StatelessWidget {
           controller: controller,
           scrollDirection: Axis.horizontal,
           children: <Widget>[
+            InkWell(
+              child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  decoration: BoxDecoration(
+                    color: Color(0xffb714365),
+                    image: DecorationImage(
+                      image: AssetImage('Images/hortela.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                    border: Border.all(
+                      color: Color(0xffb714365),
+                      width: 8,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                      child: Text('Hortelã',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 20.0,color: Colors.white),)
+                  )
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Sugestions())
+                );
+              },
+            ),
 
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
@@ -142,9 +171,8 @@ class meujardim extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 20.0,color: Colors.white),)
                 )
-
-
             ),
+
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
                 decoration: BoxDecoration(
