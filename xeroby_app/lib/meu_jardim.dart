@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/plant_description.dart';
+import 'package:xeroby_app/InsidedContent.dart';
 
 
 class meujardim extends StatelessWidget {
@@ -79,18 +81,24 @@ class meujardim extends StatelessWidget {
                         ],
                       )
                   ),
-
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10.0),
-                    width: 160.0,
-                      child: Column(
-                        children: <Widget>[
-                          Card(child: Image.asset('Images/manjericao.png')),
-                          Text('Basilio, o manjericao', style: TextStyle(color: Color(0xff16613D)),)
-                        ],
-                      )
+                  InkWell(
+                    child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        width: 160.0,
+                        child: Column(
+                          children: <Widget>[
+                            Card(child: Image.asset('Images/manjericao.png')),
+                            Text('Basilio, o manjericao', style: TextStyle(color: Color(0xff16613D)),)
+                          ],
+                        )
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PlantDescription())
+                      );
+                    },
                   ),
-
                 ],
               ),
             ),

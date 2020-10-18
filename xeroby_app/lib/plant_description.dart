@@ -51,7 +51,37 @@ class _DescriptionState extends State<PlantDescription> {
       width: 155,
       child: curiosidades,
       padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela)
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela),
+    );
+
+    final sugestoes = Text("Óleos essenciais: o manjericão ajuda a relaxar! Que tal experimentar?", textAlign: TextAlign.left, style: styleText,);
+    final lojaButton = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Color(0xff714365),
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        onPressed: () {
+
+        },
+        child: Text("Ir para a loja!", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontFamily: 'Montserrat', fontSize: 12)),
+      ),
+
+    );
+
+    final sugestoesColumn = Column(
+      children: <Widget>[
+        sugestoes,
+        SizedBox(height: 15,),
+        lojaButton
+      ],
+    );
+
+    final sugestoesBox = Container(
+      width: 155,
+      child: sugestoesColumn,
+        padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela)
     );
 
     final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
@@ -59,6 +89,9 @@ class _DescriptionState extends State<PlantDescription> {
 
     final local = Text(" área de serviço", textAlign: TextAlign.left, style: styleText);
     final placeIcon = Icon(Icons.place, color: Color(0xff16613D), size: 15);
+
+    final rega = Text(" a cada 2 dias", textAlign: TextAlign.left, style: styleText,);
+    final regaIcon = Icon(Icons.alarm, color: Color(0xff16613D), size: 15);
 
     final caracteristica1 = Row(
       children: <Widget>[
@@ -74,11 +107,20 @@ class _DescriptionState extends State<PlantDescription> {
       ],
     );
 
+    final caracteristica3 = Row(
+      children: <Widget>[
+        regaIcon,
+        rega
+      ]
+    );
+
     final caracteristicas = Column(
       children: <Widget>[
         caracteristica1,
-        caracteristica2
+        caracteristica2,
+        caracteristica3
       ],
+      crossAxisAlignment: CrossAxisAlignment.start,
     );
     
 
@@ -87,8 +129,8 @@ class _DescriptionState extends State<PlantDescription> {
         child: Column(
           children: <Widget>[
         ClipRRect(
-        borderRadius: BorderRadius.circular(400.0),
-                child: Image.asset('Images/manjericao.png', fit: BoxFit.fill))
+            borderRadius: BorderRadius.circular(50.0),
+            child: Image.asset('Images/manjericao.png', fit: BoxFit.contain))
           ],
         ),
         decoration: BoxDecoration(shape: BoxShape.circle)
@@ -111,6 +153,14 @@ class _DescriptionState extends State<PlantDescription> {
       ],
     );
 
+    final segundaLinha = Row(
+      children: <Widget>[
+        curiosidadesBox,
+        SizedBox(width: 20,),
+        sugestoesBox
+      ],
+      crossAxisAlignment: CrossAxisAlignment.start,
+    );
 
     return Scaffold(
       body: Center(
@@ -125,7 +175,8 @@ class _DescriptionState extends State<PlantDescription> {
                 primeiraLinha,
                 SizedBox(height: 40),
                 Text("Saiba mais", textAlign: TextAlign.left, style: styleBold),
-                curiosidadesBox
+                SizedBox(height: 10,),
+                segundaLinha
               ]
             )
           ),
