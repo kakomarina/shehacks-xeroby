@@ -27,10 +27,7 @@ class meujardim extends StatelessWidget {
           ],
     ),
       body: const Center(
-        child: Text(
-        'This is the home page',
-          style: TextStyle(fontSize: 24),
-        ),
+        
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -45,7 +42,7 @@ class meujardim extends StatelessWidget {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.star , color: Color(0xff16613D)),
+            icon: Icon(Icons.stars, color: Color(0xff16613D)),
             title: Text("Meu Jardim",
                 style: TextStyle(
                   fontSize: 15.0,
