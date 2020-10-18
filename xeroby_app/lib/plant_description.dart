@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:xeroby_app/meu_jardim.dart';
 import 'main.dart';
@@ -23,7 +24,7 @@ class _DescriptionState extends State<PlantDescription> {
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)),);
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)));
     final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
     final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
     final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
@@ -31,6 +32,7 @@ class _DescriptionState extends State<PlantDescription> {
     final plantColumn = Wrap(
       runSpacing: 10,
       children: <Widget>[
+        SizedBox(height: 10,),
         nomeCientifico,
         categoriaPlanta,
         Text("descrição", textAlign: TextAlign.center, style: styleBold),
@@ -39,14 +41,17 @@ class _DescriptionState extends State<PlantDescription> {
     );
 
     final plantBox =
-        Container(height: 244, width: 150, child: plantColumn, color: hortela);
+        Container(height: 244, width: 150, child: plantColumn,
+            padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela));
 
     final curiosidades = Text("Vai bem com pratos que levam tomate, azeite, limão, carnes vermelhas, massas e queijos",
         textAlign: TextAlign.left, style: styleText);
     final curiosidadesBox = Container(
       width: 155,
       child: curiosidades,
-      color: hortela
+      padding: EdgeInsets.symmetric(horizontal:10, vertical:10),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: hortela)
     );
 
     final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
@@ -75,24 +80,23 @@ class _DescriptionState extends State<PlantDescription> {
         caracteristica2
       ],
     );
+    
 
-    final imagem = Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("Images/hortela.jpg"),
-            fit: BoxFit.fill
+    var imagem = Container(
+        width: 155.0,
+        child: Column(
+          children: <Widget>[
+            Card(child: Image.asset('Images/manjericao.png', fit: BoxFit.fill))
+          ],
         ),
-        shape: BoxShape.circle
-      ),
-      child: Center(
-        child: Text(""),
-      )
+        decoration: BoxDecoration(shape: BoxShape.circle)
     );
 
 
     final fotoPainel = Column(
       children: <Widget>[
         imagem,
+        SizedBox(height: 10,),
         caracteristicas
       ]
     );
