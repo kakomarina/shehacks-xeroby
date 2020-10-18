@@ -15,7 +15,6 @@ class InsideContent extends StatefulWidget {
 
 class _ContentState extends State<InsideContent> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   var _pages = <Widget>[
     meujardim(),//this is a stateful widget on a separate file
     PlantDescription(),//this is a stateful widget on a separate file
