@@ -15,9 +15,9 @@ class PlantDescription extends StatefulWidget{
 
 class _DescriptionState extends State<PlantDescription> {
 
-  TextStyle styleItalico= TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontStyle: FontStyle.italic, color: Color(0xff16613D));
-  TextStyle styleBold = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D));
-  TextStyle styleText = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, color: Color(0xff16613D));
+  TextStyle styleItalico= TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, fontStyle: FontStyle.italic, color: Color(0xff16613D));
+  TextStyle styleBold = TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, fontWeight: FontWeight.bold, color: Color(0xff16613D));
+  TextStyle styleText = TextStyle(fontFamily: 'Montserrat', fontSize: 12.0, color: Color(0xff16613D));
   Color hortela = const Color(0xffAEBCB2);
 
   @override
@@ -48,10 +48,10 @@ class _DescriptionState extends State<PlantDescription> {
       color: hortela
     );
 
-    final tempo = Text("2 meses", textAlign: TextAlign.left, style: styleText);
+    final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
     final calendarIcon = Icon(Icons.calendar_today_outlined, color: Color(0xff16613D), size: 15);
 
-    final local = Text("área de serviço", textAlign: TextAlign.left, style: styleText);
+    final local = Text(" área de serviço", textAlign: TextAlign.left, style: styleText);
     final placeIcon = Icon(Icons.place, color: Color(0xff16613D), size: 15);
 
     final caracteristica1 = Row(
@@ -73,13 +73,13 @@ class _DescriptionState extends State<PlantDescription> {
         caracteristica1,
         caracteristica2
       ],
-    )
+    );
 
     final imagem = Container(
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("Images/hortela.jpg"),
-            fit: BoxFit.cover
+            fit: BoxFit.fill
         ),
         shape: BoxShape.circle
       ),
