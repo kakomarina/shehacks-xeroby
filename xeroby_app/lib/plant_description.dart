@@ -23,10 +23,10 @@ class _DescriptionState extends State<PlantDescription> {
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Nome", textAlign: TextAlign.left, style: styleBold);
-    final nomeCientifico = Text("Nome Cientifico", textAlign: TextAlign.left, style: styleItalico);
-    final categoriaPlanta = Text("Categoria", textAlign: TextAlign.left, style: styleText);
-    final descricao = Text("Descricao textao", textAlign: TextAlign.left, style: styleText);
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: styleBold);
+    final nomeCientifico = Text("Ocimum basilicum", textAlign: TextAlign.left, style: styleItalico);
+    final categoriaPlanta = Text("Ervas medicinais, condimento", textAlign: TextAlign.left, style: styleText);
+    final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
 
     final plantColumn = Column(
       children: <Widget>[
@@ -40,16 +40,40 @@ class _DescriptionState extends State<PlantDescription> {
     final plantBox =
         Container(height: 244, width: 150, child: plantColumn, color: hortela);
 
-    final curiosidades = Text("curiosidades", textAlign: TextAlign.left, style: styleText);
+    final curiosidades = Text("Vai bem com pratos que levam tomate, azeite, limão, carnes vermelhas, massas e queijos",
+        textAlign: TextAlign.left, style: styleText);
     final curiosidadesBox = Container(
       width: 155,
       child: curiosidades,
       color: hortela
     );
 
-    final caracteristicas = Text("caracteristica\ncaracteristica\ncaracteristica",
-        textAlign: TextAlign.left, style: styleText);
+    final tempo = Text("2 meses", textAlign: TextAlign.left, style: styleText);
+    final calendarIcon = Icon(Icons.calendar_today_outlined, color: Color(0xff16613D), size: 15);
 
+    final local = Text("área de serviço", textAlign: TextAlign.left, style: styleText);
+    final placeIcon = Icon(Icons.place, color: Color(0xff16613D), size: 15);
+
+    final caracteristica1 = Row(
+      children: <Widget>[
+        calendarIcon,
+        tempo
+      ],
+    );
+
+    final caracteristica2 = Row(
+      children: <Widget>[
+        placeIcon,
+        local
+      ],
+    );
+
+    final caracteristicas = Column(
+      children: <Widget>[
+        caracteristica1,
+        caracteristica2
+      ],
+    )
 
     final imagem = Container(
       decoration: BoxDecoration(
@@ -77,19 +101,6 @@ class _DescriptionState extends State<PlantDescription> {
       ],
     );
 
-
-    int _selectedIndex = 0;
-    final _pages = <Widget>[
-      MyHomePage(),//this is a stateful widget on a separate file
-      meujardim(),//this is a stateful widget on a separate file
-      PlantDescription(),//this is a stateful widget on a separate file
-    ];
-
-    void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
 
     return Scaffold(
       body: Center(
