@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xeroby_app/AdicionarPlanta.dart';
+import 'package:xeroby_app/edit_perfil.dart';
 import 'package:xeroby_app/meu_jardim.dart';
 import 'package:xeroby_app/plant_description.dart';
 
@@ -49,7 +50,13 @@ class _ContentState extends State<InsideContent> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.person_outline, color: Color(0xff16613D)), onPressed: () {}),
+          IconButton(icon: Icon(Icons.person_outline, color: Color(0xff16613D)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => editperfil()),
+                );},
+              ),
         ],
       ),
       body: Center(

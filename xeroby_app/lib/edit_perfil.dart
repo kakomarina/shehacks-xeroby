@@ -1,112 +1,144 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-
-class createPage extends StatefulWidget {
-  createPage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+import 'package:xeroby_app/InsidedContent.dart';
+class editperfil extends StatefulWidget{
+  editperfil({Key key,}): super(key: key);
 
   @override
-  _createState createState() => _createState();
+  _editperfil createState()=> _editperfil();
 }
 
-class _createState extends State<createPage> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
+class _editperfil extends State<editperfil> {
+  var pressedCasa = false ;
+  var pressedApartamento = false;
   @override
   Widget build(BuildContext context) {
 
-    final emailField = TextField(
+    final nomeField = TextField(
       obscureText: false,
-      style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "email",
-          suffixIcon: Icon(Icons.alternate_email),
+          hintText: "nome completo",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
-    final nameField = TextField(
+    final idadeField = TextField(
       obscureText: false,
-      style: style,
+      keyboardType: TextInputType.number,
+
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "nome",
-          suffixIcon: Icon(Icons.person_outline),
+          hintText: "idade",
+
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
-    final nicknameField = TextField(
+    final ufField = TextField(
       obscureText: false,
-      style: style,
+
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "sobrenome",
-          suffixIcon: Icon(Icons.person_outline),
+          hintText: "UF",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
-    final passwordField = TextField(
+    final cidadeField = TextField(
       obscureText: true,
-      style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "senha",
-          suffixIcon: Icon(Icons.lock_outline),
+          hintText: "cidade",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
-    final confirmpasswordField = TextField(
+    final detalhesField = TextField(
       obscureText: false,
-      style: style,
+
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "confirmar senha",
-          suffixIcon: Icon(Icons.lock),
+          hintText: "mais detalhes sobre o ambiente",
+
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
     );
-    final loginButon = Material(
+    final n_moradoresField = TextField(
+      obscureText: false,
+      keyboardType: TextInputType.number,
+
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: "quantos moram na casa",
+
+
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(15.0))),
+    );
+    final salvarButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xFF8DAF5C),
       child: MaterialButton(
         minWidth: 200.0,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("Login",
+        onPressed: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InsideContent()),
+            );},
+        child: Text("Salvar",
 
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
-    final returnButon = FlatButton(
-
+    final casaButon = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: pressedCasa? Color(0xFF8DAF5C): Color(0xffaebcb2),
       child: MaterialButton(
         minWidth: 200.0,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => MyHomePage()),
-          );},
-        child: Text("Voltar a tela anterior",
+          setState(() {
+            pressedCasa =
+            !pressedCasa; // update the state of the class to show color change
+            pressedApartamento = false;
+          });
+        },
+        child: Text("cidade",
+
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 15.0, color: Colors.black, decoration: TextDecoration.underline, fontStyle: FontStyle.italic)),
+                fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
+    final apartamentoButon = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: pressedApartamento? Color(0xFF8DAF5C): Color(0xffaebcb2),
+      child: MaterialButton(
+        minWidth: 200.0,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+          setState(() {
+            pressedApartamento =
+            !pressedApartamento;
+            pressedCasa = false;
+          });
+        },
+        child: Text("apê",
+
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
+    int _selectedIndex;
+
+
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
           automaticallyImplyLeading: true,
           elevation: 0,
@@ -115,9 +147,12 @@ class _createState extends State<createPage> {
               onPressed:() {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                  MaterialPageRoute(builder: (context) => InsideContent()),
                 );}
-          )
+          ),
+          title: const Text('Edite seu perfil',
+          style: TextStyle(color: Color(0xff16613D), fontWeight: FontWeight.bold)
+          ),
       ),
       body: Center(
         child: Container(
@@ -128,19 +163,45 @@ class _createState extends State<createPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                emailField,
+                nomeField,
                 SizedBox(height: 25.0),
-                nameField,
+                idadeField,
                 SizedBox(height: 25.0),
-                nicknameField,
+                Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100.0,
+                        child: ufField,
+                      ),
+                      SizedBox(width: 25.0),
+                      Container(
+                        width: 100.0,
+                        child: cidadeField,
+                      ),
+                      ]
+                ),
                 SizedBox(height: 25.0),
-                passwordField,
+                Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100.0,
+                        child: casaButon ,
+                      ),
+                      SizedBox(width: 25.0),
+                      Container(
+                        width: 100.0,
+                        child: apartamentoButon,
+                      ),
+                    ]
+                ),
                 SizedBox(height: 25.0),
-                confirmpasswordField,
+                detalhesField,
+                SizedBox(height: 25.0),
+                n_moradoresField,
                 SizedBox(
                   height: 35.0,
                 ),
-                loginButon,
+                salvarButon,
 
               ],
             ),

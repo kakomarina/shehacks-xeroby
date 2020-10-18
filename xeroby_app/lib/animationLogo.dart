@@ -35,6 +35,6 @@ class _animationLogoState extends State<animationLogo> {
 
       ],
     );
-    );
+
   }
 }
