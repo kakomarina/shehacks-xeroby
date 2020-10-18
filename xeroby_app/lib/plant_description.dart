@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:xeroby_app/meu_jardim.dart';
 import 'main.dart';
@@ -79,24 +80,23 @@ class _DescriptionState extends State<PlantDescription> {
         caracteristica2
       ],
     );
+    
 
-    final imagem = Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("Images/hortela.jpg"),
-            fit: BoxFit.fill
+    var imagem = Container(
+        width: 155.0,
+        child: Column(
+          children: <Widget>[
+            Card(child: Image.asset('Images/manjericao.png', fit: BoxFit.fill))
+          ],
         ),
-        shape: BoxShape.circle
-      ),
-      child: Center(
-        child: Text(""),
-      )
+        decoration: BoxDecoration(shape: BoxShape.circle)
     );
 
 
     final fotoPainel = Column(
       children: <Widget>[
         imagem,
+        SizedBox(height: 10,),
         caracteristicas
       ]
     );
