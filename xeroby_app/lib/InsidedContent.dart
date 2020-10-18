@@ -30,7 +30,9 @@ class _ContentState extends State<InsideContent> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       appBar: AppBar(
         leading: Builder(
           builder: (BuildContext context) {

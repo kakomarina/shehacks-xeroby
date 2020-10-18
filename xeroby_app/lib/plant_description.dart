@@ -23,7 +23,7 @@ class _DescriptionState extends State<PlantDescription> {
   @override
   Widget build(BuildContext context) {
 
-    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)););
+    final nomePlanta = Text("Basílio, o manjeiricão", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xff16613D)),);
     final nomeCientifico = Text("Ocimum basilicum\n", textAlign: TextAlign.left, style: styleItalico);
     final categoriaPlanta = Text("Ervas medicinais, condimento\n", textAlign: TextAlign.left, style: styleText);
     final descricao = Text("As folhas do manjericão apresentam sabor e aroma doce e picante característico", textAlign: TextAlign.left, style: styleText);
@@ -50,7 +50,7 @@ class _DescriptionState extends State<PlantDescription> {
     );
 
     final tempo = Text(" 2 meses", textAlign: TextAlign.left, style: styleText);
-    final calendarIcon = Icon(Icons.calendar_today_outlined, color: Color(0xff16613D), size: 15);
+    final calendarIcon = Icon(Icons.calendar_today, color: Color(0xff16613D), size: 15);
 
     final local = Text(" área de serviço", textAlign: TextAlign.left, style: styleText);
     final placeIcon = Icon(Icons.place, color: Color(0xff16613D), size: 15);

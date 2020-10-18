@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:xeroby_app/InsidedContent.dart';
 import 'main.dart';
 import 'meu_jardim.dart';
+
 class createPage extends StatefulWidget {
   createPage({Key key, this.title}) : super(key: key);
 
@@ -85,7 +87,7 @@ class _createState extends State<createPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => meujardim()),
+              MaterialPageRoute(builder: (context) => InsideContent()),
             );},
         child: Text("Criar",
 
@@ -111,6 +113,7 @@ class _createState extends State<createPage> {
       ),
     );
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
           automaticallyImplyLeading: true,
           elevation: 0,
